@@ -58,7 +58,7 @@ header{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.95);
 .hero .wrap{position:relative;z-index:2;width:100%;
   padding-bottom:clamp(1.8rem,6vw,3.5rem);padding-top:clamp(4rem,18vw,7rem)}
 .hero h1{font-family:var(--min);font-weight:400;color:#fff;
-  font-size:clamp(2.35rem,10.5vw,4.4rem);line-height:1.4;letter-spacing:.06em;
+  font-size:clamp(1.85rem,7.4vw,3.4rem);line-height:1.5;letter-spacing:.05em;
   text-shadow:0 2px 30px rgba(0,0,0,.32)}
 .hero .sub{color:rgba(255,255,255,.92);font-size:clamp(.85rem,3.6vw,1rem);line-height:2.1;
   letter-spacing:.08em;margin-top:1.6rem;text-shadow:0 1px 18px rgba(0,0,0,.4)}
@@ -268,6 +268,7 @@ footer .logo b{font-size:2.05rem}
 .rcard2 .rgo{position:relative;margin-top:auto;padding-top:1.3rem;display:flex;
   align-items:center;justify-content:space-between;font-family:var(--min);font-size:.9rem;letter-spacing:.1em}
 
+.hero h1 span{display:inline-block}
 .read{max-width:46rem;margin:0}
 .txt{font-size:.92rem;color:var(--ink-2);line-height:2.35;margin-top:1.4rem;max-width:46rem}
 
@@ -381,7 +382,7 @@ footer .logo b{font-size:2.05rem}
   </div>
   <nav id="drawer">
     <a href="#areas">エリア風水</a><a href="#props">物件一覧</a><a href="#column">コラム</a>
-    <a href="#diagnose">命星診断</a><a href="#">開運口コミ</a><a href="#cta">無料相談</a>
+    <a href="diagnosis.html">命星診断</a><a href="#">開運口コミ</a><a href="#cta">無料相談</a>
   </nav>
 </header>
 
@@ -391,11 +392,11 @@ footer .logo b{font-size:2.05rem}
   <div class="bg" id="heroBg"></div>
   <div class="wrap">
     <div class="eyebrow" style="font-family:var(--min);font-size:.86rem;letter-spacing:.2em;color:rgba(255,255,255,.82)">四柱推命 × 九星気学 × 不動産</div>
-    <h1>ことを成す人は、<br>家を「星」で選ぶ。</h1>
+    <h1><span>ことを成す人は、</span><span>家を「星」で選ぶ。</span></h1>
     <p class="sub">今が買い時か、この街でいいか、あなたと相性のいい家はどれか。<br>
       生まれ持った星から、ご縁のある一軒と、買うのに良い時期を見立てます。</p>
     <div class="acts">
-      <a class="hbtn solid" href="#line">吉方位を無料診断 →</a>
+      <a class="hbtn solid" href="diagnosis.html">吉方位を無料診断 →</a>
       <a class="hbtn line" href="#props">住まいを見る</a>
     </div>
   </div>
@@ -428,7 +429,7 @@ footer .logo b{font-size:2.05rem}
 <section class="blk" id="areas">
   <div class="wrap sec-hd">
     <h2>エリア風水ガイド</h2>
-    <a class="more" href="#">エリアを見る</a>
+    <a class="more" href="#">すべて見る / <em>ALL AREAS</em></a>
   </div>
   <div class="rail" id="areaRail"></div>
 </section>
@@ -436,10 +437,10 @@ footer .logo b{font-size:2.05rem}
 <section class="blk alt" id="props">
   <div class="wrap sec-hd">
     <h2>注目物件</h2>
-    <a class="more" href="#">住まいを見る</a>
+    <a class="more" href="#">すべて見る / <em>ALL PROPERTIES</em></a>
   </div>
   <div class="rail" id="propRail"></div>
-  <div class="wrap rail-foot"><a class="obtn" href="#">LINEで物件を相談する →</a></div>
+  <div class="wrap rail-foot"><a class="obtn" href="#">128件すべて見る →</a></div>
 </section>
 <section class="blk alt">
   <div class="wrap sec-hd">
@@ -668,7 +669,7 @@ footer .logo b{font-size:2.05rem}
   <div class="vrule" style="margin-top:1.8rem"></div>
   <div class="fgrid">
     <a href="#props">物件一覧</a><a href="#areas">エリア風水</a>
-    <a href="#column">コラム</a><a href="#diagnose">風水診断</a>
+    <a href="#column">コラム</a><a href="diagnosis.html">風水診断</a>
     <a href="#">開運口コミ</a><a href="#cta">無料相談</a>
   </div>
   <a class="fsub" href="#">スピ不動産 湘南 →</a>
@@ -2334,7 +2335,7 @@ function renderProps(personal){
       const c = FengshuiEngine.combine(r, p);
       fit = `<div class="st" style="color:${c.adjust>=0?"#4E7C60":"#A65A4A"}">あなたとの相性 ${p.score}／合成 ${c.personalTotal}</div>`;
     }
-    return `<a class="pcard2" href="#props">
+    return `<a class="pcard2" href="property-azabudai.html">
       <div class="ph2" style="background-image:url('${IMG[s.imgKey||"tokyo"]}')"></div>
       <div class="bd2"><span class="wm2">${r.total}</span>
         <div class="top2"><span class="no2">${String(i+1).padStart(2,"0")}</span><span class="badge2">売買</span></div>
@@ -2354,7 +2355,7 @@ document.getElementById("colRail").innerHTML = COLS.map(c=>`
    <h3>${c.t}</h3><p>${c.p}</p><span class="go">続きを読む →</span></div></a>`).join("");
 
 document.getElementById("regRail").innerHTML = REGS.map((r,i)=>`
- <a class="rcard2" href="#areas">
+ <a class="rcard2" href="areas.html">
   <div class="rph" style="background-image:url('${IMG[r.img]}')"></div>
   <div class="rbd"><span class="rwm">${String(i+1).padStart(2,"0")}</span>
     <div class="ren" style="color:${r.c}">${r.en}</div>
